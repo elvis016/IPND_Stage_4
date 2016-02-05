@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+<!-- inherent from index.html -->
+{% block content %}
+<form action = {{ html_sign }} method = "post">
+    <div class = "row">
+        <textarea name = "forum_content" rows = "3" cols = "60" autofocus></textarea>
+    </div>
+    <div  class = "row">
+        <input type="submit"  value = "Post Comment">
+    </div>
+</form>
+<hr>
+<b style="color:red">{{ html_error }}</b>
+<br>
+<br>
+<form method = "get">
+    Forum:
+    <input name = "forum_name" value = {{ html_forum_name }} >
+    <input type = "submit" value = "Switch">
+</form>
+<br>
+<br>
+Logged in as: <strong>{{ html_user_name }}</strong>
+<br>
+<a href={{ html_url }}>{{ html_url_linktext }}</a>
+<!-- user posts start hear -->
+<hr>
+<div class = "row">
+    {% for html_post in html_posts %}
+        <table>
+        <!-- Check if the current signed in user matches with the author's identity from this particular post. -->
+        {% if html_user_id == html_post.author.identity %}
+            <tr>
+                <th>E-Mail</th>
+                <td>(You) {{ html_post.author.name}}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <th>E-Mail</th>
+                <td>{{ html_post.author.name}}</td>
+            </tr>
+        {% endif %}
+            <tr>
+                <th>Comment</th>
+                <td>{{ html_post.content }}</td>
+            </tr>
+        </table>
+    {% endfor %}
+</div>
+{% endblock %}
