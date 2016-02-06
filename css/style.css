@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+.img-height-200 {
+  display: block;
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.img-height-400 {
+  display: block;
+  max-width: 100%;
+  max-height: 400px;
+}
+
+.banner {
+	background-color: #9ff;
+	display: flex;
+ 	align-items: center;
+}
+
+.text-muted {
+	color: #888;
+}
+
+.text-light-300 {
+	font-weight: 300;
+}
+
+.text-semi-bold-600 {
+	font-weight: 600;
+}
+
+.text-bold-700 {
+	font-weight: 700;
+}
+
+.subject-border {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 0;
+}
+
+ul.circle {
+	list-style-type: circle;
+}
+
+ul.disc {
+	list-style-type: disc;
+}
+
+ul.square {
+	list-style-type: square;
+}
+
+ol.decimal {
+	list-style-type: decimal;
+}
+
+ol.lower-alpha {
+	list-style-type: lower-alpha;
+}
+
+ol.lower-roman {
+	list-style-type: lower-roman;
+}
+
+ol.upper-alpha{
+	list-style-type: upper-alpha;
+}
+
+ol.upper-roman {
+	list-style-type: upper-roman;
+}

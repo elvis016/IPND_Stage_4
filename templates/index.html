@@ -1,15 +1,311 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
-    <meta charset = "utf-8">
-    <title>FeedBack</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Google App Engine</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Self defined CSS-->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,700,600' rel='stylesheet' type='text/css'>
+        <!-- Google Fonts-->
+    <title>Google App Engine</title>
 </head>
 <body>
     <div class = "container">
-        <h1>Allow Comment</h1>
-        {% block content %}
-        <!--Template Inheritance-->
-        {% endblock %}
+        <div class = "row">
+            <div class="col-md-5">
+                <div class="row banner">
+                    <h2>
+                        Lesson 4.1: Networks
+                    </h2>
+                </div>
+                <div class="row">
+                    <h4>
+                        A <b>network</b> is a group of entities that can communicate, even though they are not all directly connected.
+                    </h4>
+                </div>
+                <div class="row">
+                    <ul class="disc">
+                        <li>Latency: Time it takes meassage to get from source to destination</li>
+                        <li>Bandwidth: Amount of information that can be transmitted per unit time</li>
+                        <li>Protocols: Hypertext Transfer Protocol (HTTP)</li>
+                    </ul>
+                </div>
+                <div class="row banner">
+                    <h2>
+                        Lesson 4.2: Creating a Structured Document with HTML
+                    </h2>
+                </div>
+                <div class="row">
+                    <ul class="disc">
+                        <li>HTML Documents</li>
+                            <p>
+                                &lt;!DOCTYPE html&gt;<br>
+                                &lt;html&gt;<br>
+                                &lt;head&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Title!&lt;/title&gt;<br>
+                                &lt;/head&gt;<br>
+                                &lt;body&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;b&gt;content&lt;b&gt;<br>
+                                &lt;/body&gt;<br>
+                                &lt;/html&gt;
+                            </p>
+                        <li>Introducing URLs</li>
+                            URL: Uniform Resource Locator
+                            <table>
+                                <tr>
+                                    <th>http</th>
+                                    <td>://</td>
+                                    <th>www.udacity.com</th>
+                                    <th>/..............</th>
+                                    </tr>
+                                <tr>
+                                    <th style = "color:red">Protocol</th>
+                                    <td>://</td>
+                                    <th style = "color:red">Host</th>
+                                    <th style = "color:red">Path</th>
+                                </tr>
+                            </table>
+                        <li>Query Parameters (GET parameters)</li>
+                            http://example.com/foo?p=1&q=neat<br>
+                            Name(parameter) = Value; Using <b>&</b> to combine more than one parameters.
+                        <li>What is foo?</li>
+                            <p>
+                                Foo doesn't mean anything. But there is a long history of programmers using foo and bar in coding examples. As you search for answers to your programming problems you'll probably see these variables show up every now and then. You can read more <a href="http://programmers.stackexchange.com/questions/69788/what-is-the-history-of-the-use-of-foo-and-bar-in-source-code-examples">here</a>.
+                            </p>
+                        <li>What is foo?</li>
+                            <p>
+                                A cache (pronounced like cash) is something that stores data so that you don't have to retrieve it later. It can be used to make data requests faster. For more information, <a href="http://computer.howstuffworks.com/cache1.htm">this page</a> has a good explanation.
+                            </p>
+                        <li>Fragments</li>
+                            <p>
+                                A fragment is separated from the rest of URLs by a # sign. The fragment purely exists in the browser
+                            </p>
+                        <li>HTTP</li>
+                            <p>
+                                HTTP Request <br>
+                                GET /foo HTTP/1.1 - Request Line<br>
+                                Host: www.example.com<br>
+                                User-Agent: Chrome<br>
+                                The path was referring to is actually just the relative path for that URL. It gives an address that is "relative" to the host (in this case, example.com). You could also specify the full path. In this case, that would be: http://example.com/foo/logo.png?p=1. If you had trouble getting your CSS and HTML to talk to each other during the first course, you may have specified the path incorrectly in the href attribute of your <link> tag. If you'd like, you can read more about <a href="http://www.coffeecup.com/help/articles/absolute-vs-relative-pathslinks/">absolute vs. relative paths</a>.
+                            </p>
+                            <p>
+                                HTTP Respose <br>
+                                Date: Tue, Mar, 2012, 04:33:33 GMT<br>
+                                Server: Apache /2.2.3<br>
+                                Content-Type: text/html<br>
+                                Content-Length: 1539<br>
+                                <table>
+                                    <tr>
+                                        <th>Status Codes</th>
+                                    </tr>
+                                    <tr>
+                                        <td>200 Ok</td>
+                                    </tr>
+                                    <tr>
+                                        <td>302 Found</td>
+                                    </tr>
+                                    <tr>
+                                        <td>404 Not Found</td>
+                                    </tr>
+                                    <tr>
+                                        <td>500 Server Error</td>
+                                    </tr>
+                                </table>
+                            </p>
+                        <li>Servers</li>
+                        Purpose: Repond to HTTP requests
+                            <table>
+                                <tr>
+                                    <th>Static</th>
+                                </tr>
+                                <tr>
+                                    <td>Pre-Written File</td>
+                                </tr>
+                                <tr>
+                                    <td>Image</td>
+                                </tr>
+                                <tr>
+                                    <th>Dynamic</th>
+                                </tr>
+                                <tr>
+                                    <td>Made on the fly</td>
+                                </tr>
+                            </table>
+                    </ul>
+                    <hr>
+                    <div class="row banner">
+                    <h2>
+                        Lesson 4.3: Form
+                    </h2>
+                </div>
+                <hr>
+                    The &lt;form&gt; tag is used to create an HTML form for user input.<br>
+                    The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").<br>
+                    Notes on GET:<br>
+                    <ul>
+                        <li>Appends form-data into the URL in name/value pairs</li>
+                        <li>The length of a URL is limited (about 3000 characters)</li>
+                        <li>Never use GET to send sensitive data! (will be visible in the URL)</li>
+                        <li>Useful for form submissions where a user want to bookmark the result</li>
+                        <li>GET is better for non-secure data, like query strings in Google</li>
+                    </ul>
+                    Notes on POST:<br>
+                    <ul>
+                        <li>Appends form-data inside the body of the HTTP request (data is not shown is in URL)</li>
+                        <li>Has no size limitations</li>
+                        <li>Form submissions with POST cannot be bookmarked</li>
+                    </ul>
+                    &lt;form action=&quot;http://www.google.com/search&quot;&gt;<br>
+                    Hello, World!<br>
+                    &lt;input name=&quot;q&quot;&gt;<br>
+                    &lt;/form&gt;<br><br>
+                    &lt;form&gt;<br>
+                    &lt;!--text input--&gt;<br>
+                    First name:<br>
+                    &lt;input type=&quot;text&quot; name=&quot;firstname&quot;&gt;<br>
+                    Last name:<br>
+                    &lt;input type=&quot;text&quot; name=&quot;lastname&quot;&gt;<br>
+                    &lt;/form&gt;<br><br>
+                    &lt;form&gt;<br>
+                    &lt;!--password input--&gt;<br>
+                    First name (password):<br>
+                    &lt;input type=&quot;password&quot; name=&quot;firstname&quot;&gt;<br>
+                    Last name (password):<br>
+                    &lt;input type=&quot;password&quot; name=&quot;lastname&quot;&gt;<br>
+                    &lt;/form&gt;<br><br>
+                    &lt;form&gt;<br>
+                    &lt;!--radio button input and label element
+                    The &lt;label&gt; tag defines a label for an &lt;input&gt; element.
+                    The &lt;label&gt; element does not render as anything special for the user.
+                    However, it provides a usability improvement for mouse users,
+                    because if the user clicks on the text within the &lt;label&gt; element, it toggles the control.
+                    --&gt;
+                    <br>
+                    &lt;label&gt;<br>
+                    Male<br>
+                    &lt;input type=&quot;radio&quot; name=&quot;gender-radio&quot; value=&quot;male&quot;&gt;<br>
+                    &lt;/label&gt;<br>
+                    &lt;label&gt;<br>
+                    Female<br>
+                    &lt;input type=&quot;radio&quot; name=&quot;gender-radio&quot; value=&quot;female&quot;&gt;<br>
+                    &lt;/label&gt;<br>
+                    &lt;label&gt;<br>
+                    Other<br>
+                    &lt;input type=&quot;radio&quot; name=&quot;gender-radio&quot; value=&quot;other&quot;&gt;<br>
+                    &lt;/label&gt;<br>
+                    &lt;/form&gt;<br><br>
+                    &lt;form&gt;<br>
+                    &lt;!--checkbox input--&gt;<br>
+                    &lt;input type=&quot;checkbox&quot; name=&quot;gender-box&quot; value=&quot;male&quot;&gt; Male<br>
+                    &lt;input type=&quot;checkbox&quot; name=&quot;gender-box&quot; value=&quot;female&quot;&gt; Female<br>
+                    &lt;input type=&quot;checkbox&quot; name=&quot;gender-box&quot; value=&quot;other&quot;&gt; Other<br>
+                    &lt;!--dropdown menu--&gt;<br>
+                    &lt;select name=&quot;list&quot;&gt;<br>
+                    &lt;option value=&quot;1&quot;&gt;one&lt;/option&gt;<br>
+                    &lt;option value=&quot;2&quot;&gt;two&lt;/option&gt;<br>
+                    &lt;option value=&quot;3&quot;&gt;three&lt;/option&gt;<br>
+                    &lt;/select&gt;<br>
+                    &lt;!--submit button--&gt;<br>
+                    &lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;<br>
+                    &lt;!--action attribute<br>
+                            The action attribute specifies where to send the form-data when a form is submitted.<br>
+                            Syntax: &lt;form action=&quot;URL&quot;&gt;<br>
+                        --&gt;<br>
+                    &lt;/form&gt;<br><br>
+                <hr>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="row banner">
+                    <h2>
+                        Lesson 4.4: Python Modulus and Dictionaries
+                    </h2>
+                </div>
+                <hr>
+                <div class="row banner">
+                    <h2>
+                        Lesson 4.5: Working with App Engine
+                    </h2>
+                </div>
+                <hr>
+                <div class="row banner">
+                    <h2>
+                        Lesson 4.6: Validation
+                    </h2>
+                </div>
+                <div>
+                    <p>
+                    There are some simple things you can do to prevent the web applications you create from being hacked. This lesson will teach you how to use input validation to improve your site's security. After you learn about input validation, you'll learn how to use Python string substitution to generate complex strings from data.
+                    </p>
+                    <ul class = "disc">
+                        <li>It's a pain to change</li>
+                        <li>Don't get any syntax highlighting</li>
+                        <li>Code is ugly</li>
+                        <li>It's error prone</li>
+                    </ul>
+                    Using HTML Escaping<br>
+                    Redirection<br>
+                    Why is it nice to redirect after a form submission?<br>
+                    <ul>
+                        <li>Reloading the page doesn't resubmit the form</li>
+                        <li>We can have distinct pages for forms and success pages</li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="row banner">
+                    <h2>
+                        Lesson 4.7: HTML Templates (JinJa2)
+                    </h2>
+                </div>
+                <div>
+                    Avoid repetition in the HTML<br>
+                    Hidden Input<br>
+                    &lt;input type = &quot;text&quot; name = &quot;food&quot;&gt;<br>
+                    &lt;input type = &quot;hidden&quot; name = &quot;food&quot; value = &quot;eggs&quot;&gt;<br>
+                    See two values in the url - what we submitted and the hardcoded value<br>
+                    Possible Problems to use Python fromatting
+                    <ul class = "disc">
+                        <li>It's a pain to change</li>
+                        <li>Don't get any syntax highlighting</li>
+                        <li>Code is ugly</li>
+                        <li>It's error prone</li>
+                    </ul>
+                    There is a better way! - "Templates"<br>
+                    A template library is a library to build complicated strings (HTML)<br>
+                    <ul class = "disc">
+                        <li>Variable Substitution</li>
+                        <li>Statement Syntax</li>
+                        <li>Escaping</li>
+                        <li>Template Inheritance</li>
+                        <li>Merits of using template</li>
+                        Separate different types of code<br>
+                        Make more readable code<br>
+                        More secure websites<br>
+                        HTML that is easier to modify<br>
+                    </ul>
+
+                </div>
+                <hr>
+                <div class="row banner">
+                    <h2>
+                        Lesson 4.8: Databases
+                    </h2>
+                </div>
+                <div>
+                    <h1>Allow Comment</h1>
+                    {% block content %}
+                    <!--Template Inheritance-->
+                    {% endblock %}
+                </div>
+                <hr>
+            </div>
+        </div>
     </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 # [Cannot use underscore and period in name of application]
-application: first-project-1193
+application: comment-1213
 version: 1
 runtime: python27
 api_version: 1
@@ -7,6 +7,14 @@ threadsafe: true
 
 # [START handlers]
 handlers:
+
+# Using static files
+- url: /css
+  static_dir: css
+
+- url: /images
+  static_dir: images
+
 - url: /.*
   script: allow_comment.app
 # [END handlers]

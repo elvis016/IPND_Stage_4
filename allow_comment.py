@@ -153,8 +153,13 @@ class PostForum(Handler):
         # Get the content from our request parameters, in this case,
         # The message is in the parameter "forum_content"
         # Assign "forum_content" to content under Post Class
-        if self.request.get("forum_content"):
-            post.content = self.request.get("forum_content")
+        # Return a copy of the string with the leading and trailing characters removed.
+        # The chars argument is a string specifying the set of characters to be removed.
+        # If omitted or None, the chars argument defaults to removing whitespace.
+        # The chars argument is not a prefix or suffix; rather, all combinations of its values are stripped
+        get_content = self.request.get("forum_content")
+        if get_content.strip():
+            post.content = get_content
             # Write to the Google Datastore
             # Save the object to the database
             post.put()
